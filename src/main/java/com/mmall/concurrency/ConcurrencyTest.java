@@ -19,7 +19,7 @@ public class ConcurrencyTest {
     //同时并发执行的线程数
     public static int threadTotal = 200;
     public static int count = 0;
-
+    //在不做任何同步的情况下结果是错误的
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal );
