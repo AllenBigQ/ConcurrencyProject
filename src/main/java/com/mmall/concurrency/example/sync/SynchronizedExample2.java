@@ -28,15 +28,6 @@ public class SynchronizedExample2 {
     }
 
     public static void main(String[] args) {
-        //测试静态方法
-//        SynchronizedExample1 example1 = new SynchronizedExample1();
-//        ExecutorService executorService = Executors.newCachedThreadPool();
-//        executorService.execute(()->{
-//            example1.test2(1);
-//        });
-//        executorService.execute(()->{
-//            example1.test2(2);
-//        });           //输出结果为0-9  0-9
 
         //测试一个类
 //        SynchronizedExample1 example1 = new SynchronizedExample1();
@@ -47,6 +38,17 @@ public class SynchronizedExample2 {
 //        executorService.execute(()->{
 //            example1.test1(2);
 //        });           //输出结果为0-9  0-9
+
+        //测试静态方法
+//        SynchronizedExample1 example1 = new SynchronizedExample1();
+//        ExecutorService executorService = Executors.newCachedThreadPool();
+//        executorService.execute(()->{
+//            example1.test2(1);
+//        });
+//        executorService.execute(()->{
+//            example1.test2(2);
+//        });           //输出结果为0-9  0-9
+
 
     }
 }
