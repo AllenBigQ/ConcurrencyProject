@@ -1,6 +1,7 @@
 package com.mmall.concurrency.example.count;
 
 import com.mmall.concurrency.annotation.NotThreadSafe;
+import com.mmall.concurrency.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
@@ -13,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by Allen
  */
 @Slf4j
-@NotThreadSafe
+@ThreadSafe
 public class CountExample2 {
     //请求总数
     public static int clientTotal = 5000;
@@ -40,9 +41,10 @@ public class CountExample2 {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}",count);
+        log.info("count:{}",count.get());
     }
     private static void add(){
         count.incrementAndGet();
+        //count.getAndIncrement();
     }
 }
